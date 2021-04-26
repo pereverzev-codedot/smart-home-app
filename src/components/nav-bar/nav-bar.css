@@ -1,0 +1,25 @@
+.nav-panel {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 180px;
+	background-color: var(--third-color);
+}
+.nav-item {
+	height: 150px;
+	width: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 25px;
+	margin-bottom: 20px;
+	background-color: var(--navbar-button-color);
+	color: var(--buttons-icons-color);
+	transition: 0.25s;
+}
+.nav-item:hover {
+	background-color: var(--buttons-icons-color);
+	color: var(--navbar-button-color);
+}

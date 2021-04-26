@@ -1,0 +1,38 @@
+.control-block {
+	width: 550px;
+	height: 360px;
+	background-color: var(--panels-color);
+	display: flex;
+	border-radius: 25px;
+	padding: 15px;
+}
+.sensor-wrapper {
+	width: 50%;
+	padding-right: 15px;
+	border-right: 2px solid var(--fourth-color);
+}
+
+.wrapper-container {
+	background-color: var(--fourth-color);
+	border-radius: 25px;
+	min-height: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-bottom: 15px;
+}
+.sensor-info {
+	display: flex;
+	justify-content: space-around;
+	color: var(--text-color-second);
+	font-size: 18px;
+	padding-bottom: 10px;
+}
+.sensor-info:last-child {
+	padding-bottom: 0;
+}
+
+.sensor-switcher {
+	width: 50%;
+	padding-left: 15px;
+}
