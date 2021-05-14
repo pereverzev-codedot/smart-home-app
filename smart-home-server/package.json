@@ -1,0 +1,31 @@
+{
+  "name": "smart-home-server",
+  "version": "1.0.0",
+  "description": "great project",
+  "main": "app.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.6",
+    "express": "^4.17.1",
+    "express-validator": "^6.11.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.8",
+    "serialport": "^9.0.7",
+    "socket.io": "^4.0.2"
+  },
+  "devDependencies": {
+    "concurrently": "^6.1.0",
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "server": "nodemon app.js"
+  },
+  "keywords": [
+    "server",
+    "home",
+    "smarthome"
+  ],
+  "author": "HuskyDuckStudio",
+  "license": "ISC"
+}

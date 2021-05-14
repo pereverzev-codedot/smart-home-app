@@ -9,7 +9,13 @@ body {
 }
 a {
 	text-decoration: none;
+	color: inherit;
 }
+button,
+span {
+	color: inherit;
+}
+
 .main-content {
 	display: flex;
 }
@@ -95,4 +101,40 @@ select {
 .container {
 	margin-left: 70px;
 	margin-right: auto;
+}
+
+.login-panel {
+	display: flex;
+	height: 100vh;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.MuiButton-label {
+	color: var(--text-color-main) !important;
+}
+.button-panel {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.registration-panel {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	height: 100vh;
+}
+.input-panel {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.MuiFormLabel-root {
+	color: var(--text-color-main) !important;
+}
+.MuiInputBase-input {
+	color: var(--text-color-main) !important;
 }

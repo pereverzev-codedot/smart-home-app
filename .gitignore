@@ -2,6 +2,7 @@
 
 # dependencies
 smart-home-site/node_modules
+smart-home-server/node_modules
 /.pnp
 .pnp.js
 

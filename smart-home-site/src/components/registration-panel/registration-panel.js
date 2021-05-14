@@ -13,10 +13,12 @@ const RegistrationPanel = () => {
 				<TextField className="data-input" label="Repeat password" />
 			</div>
 			<div className="button-panel">
-				<Link to="/login">
-					<Button className="registration-button">Back to login</Button>
-				</Link>
-				<Button className="registration-button">Register</Button>
+				<div>
+					<Link to="/login">
+						<Button className="registration-button">Back to login</Button>
+					</Link>
+					<Button className="registration-button">Register</Button>
+				</div>
 			</div>
 		</div>
 	)
