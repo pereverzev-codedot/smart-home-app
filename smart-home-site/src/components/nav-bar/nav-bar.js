@@ -17,8 +17,11 @@ const NavBar = () => {
 			<Link to="/outside">
 				<div className="nav-item">Outside</div>
 			</Link>
-			<Link to="/settings">
-				<div className="nav-item">Settings</div>
+			<Link to="/graphics">
+				<div className="nav-item">Graphs</div>
+			</Link>
+			<Link to="/notifications">
+				<div className="nav-item">Notifications</div>
 			</Link>
 		</div>
 	)

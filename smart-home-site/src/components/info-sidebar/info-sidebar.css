@@ -1,0 +1,60 @@
+.right-bar {
+	position: relative;
+	background-color: var(--third-color);
+	transition: 1.5s;
+}
+.right-bar-toggle {
+	position: absolute;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	height: 35px;
+	width: 45px;
+	left: -45px;
+	top: 20px;
+	background-color: inherit;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	cursor: pointer;
+	overflow: hidden;
+}
+.right-bar-toggle::after {
+	top: 6px;
+}
+
+.right-bar-toggle::before {
+	bottom: 6px;
+}
+.right-bar-toggle-line,
+.right-bar-toggle::after,
+.right-bar-toggle::before {
+	content: " ";
+	height: 3px;
+	width: 25px;
+	background-color: var(--navbar-button-color);
+	position: absolute;
+	transition: 0.8s;
+}
+
+.right-bar.active .right-bar-toggle-line {
+	width: 0;
+}
+.right-bar.active .right-bar-toggle::after {
+	transform: rotate(15deg);
+	top: 37%;
+}
+.right-bar.active .right-bar-toggle::before {
+	transform: rotate(-15deg);
+	bottom: 37%;
+}
+.right-bar-section {
+	min-height: 100vh;
+	color: var(--text-color-second);
+	width: 0;
+	overflow-x: hidden;
+	transition: 0.8s;
+}
+
+.right-bar.active .right-bar-section {
+	width: 325px;
+}

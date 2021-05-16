@@ -110,31 +110,78 @@ select {
 	justify-content: center;
 	align-items: center;
 }
-.MuiButton-label {
-	color: var(--text-color-main) !important;
-}
+
 .button-panel {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	width: 400px;
 }
 
 .registration-panel {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-content: center;
+	align-items: center;
 	height: 100vh;
 }
+
 .input-panel {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin-bottom: 15px;
+}
+
+.registration-link {
+	font-size: 14px;
+}
+
+.row-js-btw {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.MuiFormControl-root {
+	width: 400px;
+}
+
+.MuiButton-root {
+	background-color: var(--fourth-color) !important;
+	min-width: 160px !important;
+	min-height: 38px;
+	border-radius: 15px !important;
+}
+
+.MuiButton-root:hover {
+	background-color: var(--third-color) !important;
+}
+
+.MuiButton-label {
+	color: var(--text-color-second) !important;
 }
 
 .MuiFormLabel-root {
 	color: var(--text-color-main) !important;
 }
+.MuiFormLabel-root.Mui-focused {
+	color: var(--buttons-icons-color) !important;
+}
+
 .MuiInputBase-input {
 	color: var(--text-color-main) !important;
+}
+.MuiInput-underline::after {
+	border-bottom: 2px solid var(--buttons-icons-color) !important;
+}
+.MuiInput-underline::before {
+	border-bottom: 2px solid var(--third-color) !important;
+}
+
+.dev-lable {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
 }
