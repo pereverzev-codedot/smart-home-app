@@ -13,6 +13,11 @@ export const useRoutes = (isAuthenticated) => {
 					<NavBar />
 					<div className="container">
 						<Route path="/" exact component={MainPage} />
+						<Route path="/first-floor" exact component={SettingsPage} />
+						<Route path="/second-floor" exact component={SettingsPage} />
+						<Route path="/outside" exact component={SettingsPage} />
+						<Route path="/graphics" exact component={SettingsPage} />
+						<Route path="/notifications" exact component={SettingsPage} />
 						<Route path="/settings" exact component={SettingsPage} />
 					</div>
 					<InfoSideBar />

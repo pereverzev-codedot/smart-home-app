@@ -1,4 +1,4 @@
-const {Schema, model, Types} = require('mongoose')
+const {Schema, model} = require('mongoose')
 const changableSchema = new Schema(
 	{
 		dataType: String,
@@ -31,8 +31,20 @@ const changableSchema = new Schema(
 		wateringStopVal: Number,
 		gasAlertStartVal: Number,
 		gasAlertStopVal: Number,
-		isAlert: Number,
-		isAutoAlert: Number
+		waterAlertStartVal: Number,
+		waterAlertStopVal: Number,
+		humidityAlertStartVal: Number,
+		humidityAlertStopVal: Number,
+		gasAlert: Number,
+		waterAlert: Number,
+		humidityAlert: Number,
+		gasAlertDelay: Number,
+		waterAlertDelay: Number,
+		humidityAlertDelay: Number,
+		setLightPort1: String,
+		setLightPort2: String,
+		setWateringPort: String,
+		setPumpingPort: String
 	},
 	{versionKey: false}
 )

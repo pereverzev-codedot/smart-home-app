@@ -1,5 +1,5 @@
 import React from "react"
-import { Route, Switch, Redirect } from "react-router"
+// import { useStore } from "react-redux"
 import { AuthContext } from "../../context/AuthContext"
 
 import { useAuth } from "../../hooks/auth.hook"
@@ -10,10 +10,11 @@ const App = () => {
 	const { token, login, logout, userId } = useAuth()
 	const isAuthenticated = !!token
 	const routes = useRoutes(isAuthenticated)
+  // const store = useStore()
 	return (
 		<AuthContext.Provider value={{ token, login, logout, userId, isAuthenticated }}>
 			<div>{routes}</div>
-			<div className="dev-lable">
+			<div className="dev-label">
 				<div>HuskyDuckStudio</div>
 				<div>Project in development</div>
 			</div>

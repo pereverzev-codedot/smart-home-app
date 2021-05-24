@@ -1,6 +1,6 @@
 .control-block {
-	width: 550px;
-	height: 360px;
+	width: 40vw;
+	height: 41vh;
 	background-color: var(--panels-color);
 	display: flex;
 	border-radius: 25px;
@@ -35,4 +35,8 @@
 .sensor-switcher {
 	width: 50%;
 	padding-left: 15px;
+}
+.sensor-switch{
+  display: flex;
+  justify-content: space-between;
 }

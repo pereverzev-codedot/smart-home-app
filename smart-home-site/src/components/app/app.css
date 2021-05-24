@@ -180,7 +180,7 @@ select {
 	border-bottom: 2px solid var(--third-color) !important;
 }
 
-.dev-lable {
+.dev-label {
 	position: fixed;
 	right: 20px;
 	bottom: 20px;
