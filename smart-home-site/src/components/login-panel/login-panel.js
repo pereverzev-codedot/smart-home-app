@@ -35,10 +35,8 @@ const LoginPanel = () => {
 			setAlertMsg("Вы успешно вошли в систему")
 			setSeverity("success")
 			setOpen(true)
-			console.log("err")
-			auth.login(data.token, data.userId)
+			auth.login(data.token, data.userId, data.email)
 		} catch (e) {
-			console.log("err")
 			setAlertMsg(e.message)
 			setSeverity("error")
 			setOpen(true)

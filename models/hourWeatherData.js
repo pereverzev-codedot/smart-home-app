@@ -150,6 +150,10 @@ const hourWeatherSchema = new Schema(
 	},
 	{versionKey: false}
 )
-const hourWeatherData = model('weather-hour-data', hourWeatherSchema)
+const hourWeatherData = model(
+	'weather-hour-data',
+	hourWeatherSchema,
+	'weather-hour-datas'
+)
 
 module.exports = hourWeatherData

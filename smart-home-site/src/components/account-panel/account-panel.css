@@ -1,0 +1,47 @@
+.account-panel{
+  background-color: var(--fourth-color);
+  padding: 20px;
+  color: var(--text-color-second);
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.account-info{
+display: flex;
+
+}
+
+.account-info-block{
+  padding-left: 25px;
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.account-image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  background-color: #C7C7C7;
+  color: var(--text-color-second);
+}
+.account-info__text{
+
+}
+
+.change-password{
+  display: flex;
+  flex-direction: column;
+}
+
+.change-pass-input{
+
+}
+.change-pass-button{
+
+}

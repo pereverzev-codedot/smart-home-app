@@ -8,3 +8,32 @@
 .info-value {
 	color: var(--text-color-second);
 } */
+
+.settings-panel{
+  background-color: var(--fourth-color);
+  padding: 20px;
+  color: var(--text-color-second);
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  margin-bottom: 20px;
+}
+.settings-change{
+
+}
+.switch-container{
+
+}
+.switch-text{
+
+}
+.switch{
+
+}
+.app-info{
+
+}
+.info-text{
+
+}

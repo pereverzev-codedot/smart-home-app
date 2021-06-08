@@ -12,7 +12,7 @@ const userSchema = new Schema(
 			unique: true
 		},
 		password: {type: String, required: true},
-		links: [{type: Types.ObjectId, ref: 'Link'}]
+		settings: []
 	},
 	{versionKey: false}
 )

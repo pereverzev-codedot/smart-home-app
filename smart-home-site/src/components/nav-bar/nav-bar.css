@@ -3,10 +3,9 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	width: 160px;
 	background-color: var(--third-color);
 	overflow-y: auto;
+
 }
 .nav-item {
 	height: 130px;
@@ -16,11 +15,98 @@
 	justify-content: center;
 	border-radius: 25px;
 	margin-bottom: 20px;
+  padding: 20px;
 	background-color: var(--navbar-button-color);
 	color: var(--buttons-icons-color);
 	transition: 0.25s;
+  fill: #46a29f;
+  stroke: #46a29f;
 }
 .nav-item:hover {
-	background-color: var(--buttons-icons-color);
+	background-color: var(--buttons-icons-color-navbar);
 	color: var(--navbar-button-color);
+}
+.nav-bar {
+	position: absolute;
+	background-color: var(--third-color);
+	transition: 1.5s;
+	left: 0;
+	filter: drop-shadow(0px 0px 10px var(--buttons-icons-color));
+  z-index: 9999;
+}
+.nav-bar-toggle {
+	position: absolute;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	height: 35px;
+	width: 45px;
+	right: -45px;
+	top: 20px;
+	background-color: inherit;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	cursor: pointer;
+	overflow: hidden;
+}
+.nav-bar-toggle::after {
+	top: 6px;
+}
+
+.nav-bar-toggle::before {
+	bottom: 6px;
+}
+.nav-bar-toggle-line,
+.nav-bar-toggle::after,
+.nav-bar-toggle::before {
+	content: " ";
+	height: 3px;
+	width: 25px;
+	background-color: var(--navbar-button-color);
+	position: absolute;
+	transition: 0.8s;
+}
+
+.nav-bar.active .nav-bar-toggle-line {
+	width: 0;
+}
+.nav-bar.active .nav-bar-toggle::after {
+	transform: rotate(-15deg);
+	top: 37%;
+}
+.nav-bar.active .nav-bar-toggle::before {
+	transform: rotate(15deg);
+	bottom: 37%;
+}
+.nav-bar-section {
+	height: 100vh;
+	color: var(--text-color-second);
+	width: 1px;
+	opacity: 0;
+	overflow-y: hidden;
+	transition: 0.8s;
+}
+
+.nav-bar.active .nav-bar-section {
+	width: 160px;
+	opacity: 1;
+}
+
+.nav-bar-content {
+	height: 100%;
+	padding: 20px 0;
+}
+
+@media (min-width: 1440px) {
+	.nav-bar {
+		position: relative;
+		width: 160px;
+	}
+	.nav-bar-section {
+		opacity: 1;
+		width: 100%;
+	}
+	.nav-bar-toggle {
+		display: none;
+	}
 }
