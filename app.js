@@ -41,8 +41,8 @@ const start = async () => {
 			console.log(`App started on port ${serverPort}`)
 		)
 
-		// weatherService.getWeatherTwelveHours()
-		// weatherService.getWeatherFiveDays()
+		 // weatherService.getWeatherTwelveHours()
+		 // weatherService.getWeatherFiveDays()
 	} catch (e) {
 		console.log('Server error', e.message)
 		process.exit(1)

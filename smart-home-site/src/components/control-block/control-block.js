@@ -1,31 +1,46 @@
 import * as React from "react"
+import PropTypes from  'prop-types'
 import { Switch } from "@material-ui/core"
 import "./control-block.css"
 
-const ControlBlock = () => {
+const ControlBlock = ({data, changable}) => {
+  function chunk(arr, size) {
+    const result = [];
+    for (let i = 0; i < Math.ceil(arr.length/size); i += 1) {
+      result.push(arr.slice((i * size), (i * size) + size));
+    }
+    return result;
+  }
+  const newData = chunk(data,2)
 	return (
 		<div className="control-block">
 			<div className="sensor-wrapper">
-				<div className="wrapper-container">
-					<div className="sensor-info">
-						<span className="info-text">Temperature</span>
-						<span className="info-value">20</span>
-					</div>
-					<div className="sensor-info">
-						<span className="info-text">Temperature</span>
-						<span className="info-value">20</span>
-					</div>
-				</div>
-				<div className="wrapper-container">
-					<div className="sensor-info">
-						<span className="info-text">Temperature</span>
-						<span className="info-value">20</span>
-					</div>
-					<div className="sensor-info">
-						<span className="info-text">Temperature</span>
-						<span className="info-value">20</span>
-					</div>
-				</div>
+          {
+            newData.map((array)=>{
+              if (array[0] === undefined){
+                return (
+                  <div key="" className="wrapper-container">
+                  <div>Loading</div>
+                  </div>
+                )
+              }
+              return (
+                <div key="" className="wrapper-container">
+                  {
+                    array.map((el)=>{
+                      return (
+                        <div key=""  className="sensor-info">
+                          <span className="info-text">{Object.values(el)[0]}</span>
+                          <span className="info-value">{Object.values(el)[1]}</span>
+                        </div>
+
+                      )
+                    })
+                  }
+                </div>
+              )
+            })
+          }
 			</div>
 			<div className="sensor-switcher">
 				<div className="sensor-switch">
@@ -47,6 +62,11 @@ const ControlBlock = () => {
 			</div>
 		</div>
 	)
+}
+
+ControlBlock.propTypes = {
+  data: PropTypes.array.isRequired,
+  changable: PropTypes.array.isRequired
 }
 
 export default ControlBlock

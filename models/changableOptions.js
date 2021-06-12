@@ -73,10 +73,10 @@ const changableSchema = new Schema(
 				humidityAlertDelay: {value: Number, key: String, title: String}
 			},
 			{
-				setLightPort1: {value: Number, key: String, title: String},
-				setLightPort2: {value: Number, key: String, title: String},
-				setWateringPort: {value: Number, key: String, title: String},
-				setPumpingPort: {value: Number, key: String, title: String}
+				setLightPort1: {value: String, key: String, title: String},
+				setLightPort2: {value: String, key: String, title: String},
+				setWateringPort: {value: String, key: String, title: String},
+				setPumpingPort: {value: String, key: String, title: String}
 			}
 		]
 	},

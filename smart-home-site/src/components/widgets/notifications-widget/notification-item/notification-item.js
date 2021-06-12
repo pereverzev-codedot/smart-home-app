@@ -1,6 +1,6 @@
 import * as React from "react"
 import PropTypes from "prop-types"
-import {AlertIcon, MessageIcon, WarningIcon} from "../../../../images";
+import Image, {AlertIcon, MessageIcon, WarningIcon} from "../../../../images";
 
 export default function NotificationItem(props) {
 	const [active, setActive] = React.useState(false)
@@ -18,13 +18,13 @@ export default function NotificationItem(props) {
 	React.useEffect(()=>{
     switch (type) {
       case "warning": {
-        return setIcon(WarningIcon)
+        return setIcon("Warning")
       }
       case "alert": {
-        return setIcon(AlertIcon)
+        return setIcon("Alert")
       }
       case "message": {
-        return setIcon(MessageIcon)
+        return setIcon("Message")
       }
       default:{
         return null
@@ -34,7 +34,7 @@ export default function NotificationItem(props) {
 		<div className={`notification-item ${active && "active"}`}>
 			<div role="button" tabIndex={0} className="notification-title" onClick={openHandler}>
         <div className="notification-item__image-wrapper">
-				<img className="notification-item__image" src={icon} alt={type} />
+				<Image imgFile={icon}/>
         </div>
 				<span>{msg.slice(0, 5)}</span>
 				<span>{getStrData(dateFormated)}</span>

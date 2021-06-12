@@ -1,14 +1,7 @@
 import * as React from "react"
 import { Link } from "react-router-dom"
 import "./nav-bar.css"
-import {
-  FirstFloorIcon,
-  GarageIcon,
-  GraphsIcon,
-  HomeIcon, NotificationIcon,
-  OutsideIcon,
-  SecondFloorIcon
-} from "../../images";
+import Image from "../../images";
 
 
 const NavBar = () => {
@@ -26,25 +19,25 @@ const NavBar = () => {
 				<div className="nav-bar-content">
 					<div className="nav-panel">
 						<Link to="/">
-              <div className="nav-item"><img alt='Main page' src={HomeIcon}/> </div>
+              <div className="nav-item"><Image imgFile="Home"/></div>
 						</Link>
 						<Link to="/first-floor">
-              <div className="nav-item "><img src={FirstFloorIcon} alt="First floor page"/> </div>
+              <div className="nav-item "><Image imgFile="1st"/> </div>
 						</Link>
 						<Link to="/second-floor">
-              <div className="nav-item "><img src={SecondFloorIcon} alt="Second floor page"/> </div>
+              <div className="nav-item "><Image imgFile="2nd"/> </div>
 						</Link>
             <Link to="/garage">
-              <div className="nav-item "><img src={GarageIcon} alt="Garage page"/></div>
+              <div className="nav-item "><Image imgFile="Garage"/></div>
 						</Link>
 						<Link to="/outside">
-              <div className="nav-item "><img src={OutsideIcon} alt="Outside page"/> </div>
+              <div className="nav-item "><Image imgFile="Outside"/> </div>
 						</Link>
 						<Link to="/graphics">
-              <div className="nav-item "><img src={GraphsIcon} alt="Graphs page"/></div>
+              <div className="nav-item "><Image imgFile="Graphs"/></div>
 						</Link>
 						<Link to="/notifications">
-              <div className="nav-item "><img src={NotificationIcon} alt="Notification page"/> </div>
+              <div className="nav-item "><Image imgFile="Notifications"/></div>
 						</Link>
 					</div>
 				</div>

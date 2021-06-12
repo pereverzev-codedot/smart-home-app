@@ -1,24 +1,57 @@
-const {Schema, model, Types} = require('mongoose')
+const {Schema, model} = require('mongoose')
 const sensorsSchema = new Schema(
 	{
 		datatype: String,
 		hth: {
-			temperature: Number,
-			humidity: Number
+			temperature: {
+				title: String,
+				value: Number
+			},
+			humidity: {
+				title: String,
+				value: Number
+			},
 		},
 		gth: {
-			temperature: Number,
-			humidity: Number
+			temperature: {
+				title: String,
+				value: Number
+			},
+			humidity: {
+				title: String,
+				value: Number
+			},
 		},
 		oth: {
-			temperature: Number,
-			humidity: Number
+			temperature: {
+				title: String,
+				value: Number
+			},
+			humidity: {
+				title: String,
+				value: Number
+			},
 		},
-		gas: Number,
-		water: Number,
-		lightr1: Number,
-		lightr2: Number,
-		humidity: Number
+		gas: {
+			title: String,
+			value: Number
+		},
+		water: {
+			title: String,
+			value: Number
+		},
+		lightr1: {
+			title: String,
+			value: Number
+		},
+		lightr2: {
+			title: String,
+			value: Number
+		},
+		humidity: {
+			title: String,
+			value: Number
+		},
 	},
 	{versionKey: false}
 )
