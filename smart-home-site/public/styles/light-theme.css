@@ -1,13 +1,15 @@
 :root {
-	--background-color: #efefef;
-	--panels-color: #dddcd8;
-	--navbar-button-color: #dddcd8;
-	--third-color: #374961;
-	--fourth-color: #556b88;
-	--buttons-icons-color: #d74b4a;
+  --background-color: #efefef;
+  --panels-color: #dddcd8;
+  --navbar-button-color: #dddcd8;
+  --third-color: #374961;
+  --fourth-color: #556b88;
+  --buttons-icons-color: #d74b4a;
   --buttons-icons-color-navbar: #122445;
-	--text-color-main: #374961;
-	--text-color-second: #fdfdfd;
-	--text-color-always-light: #fdfdfd;
-	--right-toggle-bg: #556b88;
+  --text-color-main: #374961;
+  --text-color-second: #fdfdfd;
+  --text-color-always-light: #fdfdfd;
+  --right-toggle-bg: #556b88;
+  --right-bar-bg: #374961;
+  --right-bar-bg-hover: #556b88;
 }

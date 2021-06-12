@@ -11,7 +11,7 @@ export default function NotificationItem(props) {
   const getStrData = (day) => {
     return `${day.getUTCHours()}:${day.getUTCMinutes()} ${day.getUTCDate()}-${
       day.getMonth() + 1
-    }-${day.getUTCFullYear()}`
+    }`
   }
 	const { msg, type, date } = props
   const dateFormated =new Date(Date.parse(date))
@@ -36,7 +36,7 @@ export default function NotificationItem(props) {
         <div className="notification-item__image-wrapper">
 				<Image imgFile={icon}/>
         </div>
-				<span>{msg.slice(0, 5)}</span>
+				<span>{msg}</span>
 				<span>{getStrData(dateFormated)}</span>
 				<span className="notification-toggle" />
 			</div>

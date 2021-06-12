@@ -7,5 +7,5 @@ export const ThemeContext = createContext({
 })
 
 
-const theme = "dark";
+const theme = "light";
 export default theme;

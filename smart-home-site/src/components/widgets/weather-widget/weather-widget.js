@@ -109,11 +109,11 @@ export default function WeatherWidget() {
             <WeatherLine daily={false} forecast={weatherHourly !== null && weatherHourly}/>
           </SwiperSlide>
         </Swiper>
-        {/* <input type="text" id="key" />  */}
-        {/* <input type="text" id="value" />  */}
-        {/* <button onClick={SendChangedOption} type="button">  */}
-        {/*   SEND  */}
-        {/* </button> */}
+         <input type="text" id="key" />
+         <input type="text" id="value" />
+         <button onClick={SendChangedOption} type="button">
+           SEND
+         </button>
       </div>
 	)
 }

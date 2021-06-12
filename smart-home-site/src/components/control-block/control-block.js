@@ -2,6 +2,7 @@ import * as React from "react"
 import PropTypes from  'prop-types'
 import { Switch } from "@material-ui/core"
 import "./control-block.css"
+import Loader from "../loader";
 
 const ControlBlock = ({data, changable}) => {
   function chunk(arr, size) {
@@ -20,7 +21,7 @@ const ControlBlock = ({data, changable}) => {
               if (array[0] === undefined){
                 return (
                   <div key="" className="wrapper-container">
-                  <div>Loading</div>
+                  <Loader/>
                   </div>
                 )
               }
@@ -43,22 +44,12 @@ const ControlBlock = ({data, changable}) => {
           }
 			</div>
 			<div className="sensor-switcher">
+
 				<div className="sensor-switch">
 					<span className="svitch-text">Light in the room 1</span>
-					<Switch />
+					<Switch checked={true}/>
 				</div>
-				<div className="sensor-switch">
-					<span className="svitch-text">Light in the room 1</span>
-					<Switch />
-				</div>
-				<div className="sensor-switch">
-					<span className="svitch-text">Light in the room 1</span>
-					<Switch />
-				</div>
-				<div className="sensor-switch">
-					<span className="svitch-text">Light in the room 1</span>
-					<Switch />
-				</div>
+
 			</div>
 		</div>
 	)

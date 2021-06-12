@@ -64,13 +64,13 @@ const ControlPanel = () => {
 			<ControlBlock data={[sensorValues[0]?.hth.humidity,sensorValues[0]?.hth.temperature, sensorValues[0]?.gas, sensorValues[0]?.lightr1]} switchable={[]} />
       </SwiperSlide>
       <SwiperSlide>
-			<ControlBlock data={[sensorValues[0]?.hth.humidity,sensorValues[0]?.hth.temperature]} switchable={[]} />
+			<ControlBlock data={[sensorValues[0]?.hth.humidity,sensorValues[0]?.hth.temperature, sensorValues[0]?.lightr2]} switchable={[]} />
       </SwiperSlide>
       <SwiperSlide>
-			<ControlBlock data={[sensorValues[0]?.gth.humidity,sensorValues[0]?.gth.temperature]} switchable={[]} />
+			<ControlBlock data={[sensorValues[0]?.gth.humidity,sensorValues[0]?.gth.temperature, sensorValues[0]?.water]} switchable={[]} />
       </SwiperSlide>
       <SwiperSlide>
-			<ControlBlock data={[sensorValues[0]?.oth.humidity,sensorValues[0]?.oth.temperature]} switchable={[]} />
+			<ControlBlock data={[sensorValues[0]?.oth.humidity,sensorValues[0]?.oth.temperature, sensorValues[0]?.humidity]} switchable={[]} />
       </SwiperSlide>
     </Swiper>
 	)
