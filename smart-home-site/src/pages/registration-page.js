@@ -3,7 +3,7 @@ import RegistrationPanel from "../components/registration-panel"
 
 const RegistrationPage = () => {
   React.useEffect(()=>{
-    document.title = "Registration"
+    document.title = "SmartHomeApp - Регистрация"
   })
 	return <RegistrationPanel />
 }

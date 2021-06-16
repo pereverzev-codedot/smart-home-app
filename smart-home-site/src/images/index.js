@@ -1,19 +1,17 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-// import ThemeContext from '../context/ThemeContext'
-import theme from "../context/ThemeContext";
+import React from "react"
+import PropTypes from "prop-types"
+import { ThemeContextConsumer } from "../context/ThemeContext"
 
-export default function Image({imgFile}) {
-  return <img src={`./images/system-icons/${theme}/${imgFile}.svg`} alt="nav-btn"/>
+export default function Image({ imgFile }) {
+	return (
+		<ThemeContextConsumer>
+			{(context) => (
+				<img src={`./images/system-icons/${context.theme}/${imgFile}.svg`} alt="nav-btn" />
+			)}
+		</ThemeContextConsumer>
+	)
 }
 
 Image.propTypes = {
-   imgFile: PropTypes.string.isRequired
+	imgFile: PropTypes.string.isRequired,
 }
-
-
-const AlertIcon = `./images/system-icons/${theme}/Alert.svg`
-const MessageIcon = `./images/system-icons/${theme}/Message.svg`
-const WarningIcon = `./images/system-icons/${theme}/Warning.svg`
-
-export {AlertIcon, MessageIcon, WarningIcon}

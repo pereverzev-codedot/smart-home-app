@@ -6,6 +6,7 @@ import { Link } from "react-router-dom"
 
 import { useHttp } from "../../hooks/http.hook"
 import { AuthContext } from "../../context/AuthContext"
+import { ThemeContextConsumer } from "../../context/ThemeContext"
 
 const LoginPanel = () => {
 	const auth = useContext(AuthContext)
@@ -35,7 +36,8 @@ const LoginPanel = () => {
 			setAlertMsg("Вы успешно вошли в систему")
 			setSeverity("success")
 			setOpen(true)
-			auth.login(data.token, data.userId, data.email)
+			auth.login(data.token, data.userId, data.email, data.nickname)
+			localStorage.setItem("theme", data.theme)
 		} catch (e) {
 			setAlertMsg(e.message)
 			setSeverity("error")
@@ -51,7 +53,7 @@ const LoginPanel = () => {
 					id="email"
 					type="email"
 					name="email"
-					label="Enter Login"
+					label="Enter email"
 					onChange={changeHandler}
 				/>
 				<TextField
@@ -65,15 +67,22 @@ const LoginPanel = () => {
 			</div>
 			<div className="button-panel">
 				<div className="row-js-btw">
-					<Button className="login-button">Forgot password?</Button>
-					<Button className="login-button" onClick={loginHandler}>
-						Login
-					</Button>
-				</div>
-				<div>
-					<Link to="/register">
-						<span className="registration-link">Register to manage your home</span>
-					</Link>
+					<Link  to="/register"><Button  className="login-button">
+            <span className="registration-link">Register</span>
+          </Button></Link>
+					<ThemeContextConsumer>
+						{(context) => (
+							<Button
+								className="login-button"
+								onClick={() => {
+									loginHandler()
+									context.setThemeLocal()
+								}}
+							>
+								Login
+							</Button>
+						)}
+					</ThemeContextConsumer>
 				</div>
 			</div>
 			<Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>

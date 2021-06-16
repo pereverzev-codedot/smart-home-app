@@ -27,7 +27,7 @@ export default function GraphsPage() {
 		getGraphs().then((allData) => {
 			const tempOth = [
 				{
-					id: "Temperature",
+					id: "Температура",
 					data: allData.map((el) => {
 						const day = new Date(Date.parse(el.date))
 						return {
@@ -37,7 +37,7 @@ export default function GraphsPage() {
 					}),
 				},
 				{
-					id: "Humidity",
+					id: "Влажность",
 					data: allData.map((el) => {
 						const day = new Date(Date.parse(el.date))
 						return {
@@ -50,7 +50,7 @@ export default function GraphsPage() {
 
 			const tempGth = [
 				{
-					id: "Temperature",
+					id: "Температура",
 					data: allData.map((el) => {
 						const day = new Date(Date.parse(el.date))
 						return {
@@ -60,7 +60,7 @@ export default function GraphsPage() {
 					}),
 				},
 				{
-					id: "Humidity",
+					id: "Влажность",
 					data: allData.map((el) => {
 						const day = new Date(Date.parse(el.date))
 						return {
@@ -72,7 +72,7 @@ export default function GraphsPage() {
 			]
 			const tempHth = [
 				{
-					id: "Temperature",
+					id: "Температура",
 					data: allData.map((el) => {
 						const day = new Date(Date.parse(el.date))
 						return {
@@ -82,7 +82,7 @@ export default function GraphsPage() {
 					}),
 				},
 				{
-					id: "Humidity",
+					id: "Влажность",
 					data: allData.map((el) => {
 						const day = new Date(Date.parse(el.date))
 						return {
@@ -99,14 +99,14 @@ export default function GraphsPage() {
 		})
 	}, [getGraphs])
   React.useEffect(()=>{
-    document.title = "Graphs page"
+    document.title = "SmartHomeApp - Графики"
   })
 	return (
 		<div className="graph-page">
-			<h2>Graphics</h2>
-			<GraphicsPanel data={oth} title="Outside" />
-			<GraphicsPanel data={hth} title="Home" />
-			<GraphicsPanel data={gth} title="Garage" />
+			<h2>Графики</h2>
+			<GraphicsPanel data={hth} title="Дом" />
+			<GraphicsPanel data={gth} title="Гараж" />
+			<GraphicsPanel data={oth} title="Улица" />
 		</div>
 	)
 }

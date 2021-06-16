@@ -1,41 +1,77 @@
 import * as React from "react"
-import { Switch } from "@material-ui/core"
+import Alert from "@material-ui/lab/Alert"
+import Snackbar from "@material-ui/core/Snackbar"
+import { useHttp } from "../../hooks/http.hook"
 import "./settings-panel.css"
-import {useHttp} from "../../hooks/http.hook";
+import Loader from "../loader";
 
-const UserSettingsPanel = () => {
-  const { request } = useHttp()
-  const saveSettings = React.useCallback(async () => {
-    try {
-      const {email} = JSON.parse(localStorage.getItem("userData"))
-      console.log(email)
-      const fetched = await request(`/api/link/user`, "POST", {email, settings:[{darkTheme: true},{somethingElse: true}]} )
+const AccessKeysStgPanel = () => {
+	const { request } = useHttp()
+  const [accessKeys, setAccessKeys] = React.useState([])
+  const [open, setOpen] = React.useState(false)
+  const [alertMsg, setAlertMsg] = React.useState("Register success")
+  const [loading, setLoading] = React.useState(true)
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return
+    }
+    setOpen(false)
+  }
+
+  const getAccessKeys = React.useCallback(async () => {
+    setLoading(true)
+    try{
+      const fetched = await request(`/api/link/access-keys/get`, "GET", null)
       console.log(fetched)
-    } catch (e) {
+      setAccessKeys(fetched)
+      setLoading(false)
+    }
+    catch (e) {
       console.log(e)
     }
   }, [request])
 
-  const saveSettingsHandler = () =>{
-    saveSettings()
+  React.useEffect(()=>{
+    getAccessKeys()
+  }, [getAccessKeys])
+
+	const AddNewKeyHandler = async () => {
+   try{
+    const fetched = await request(`/api/link/access-keys/add`, "GET", null)
+     setAlertMsg(fetched.message)
+     setOpen(true)
+     getAccessKeys()
+   }
+   catch (e) {
+    console.log(e)
   }
+	}
 
 	return (
 		<div className="settings-panel">
-			<div className="settings-change">
-				<div className="switch-container">
-					<span className="switch-text">Dark theme</span>
-					<Switch classname="switch" />
-				</div>
-			</div>
-			<div className="app-info">
-				<span className="info-text">Инфа о проге</span>
-			</div>
-      <div role="button" tabIndex={0} onClick={saveSettingsHandler}>
-        Save
+      <div className="">
+        {
+          loading ? <Loader/> : accessKeys.map((el)=>{
+            return (
+              <div key={el.id} className="">
+                <span>Ключ: {el.accessKey}</span>
+                <span>{el.active ? "Активен" : "Не активен"}</span>
+              </div>
+            )
+          }).reverse()
+        }
       </div>
+			<div role="button" tabIndex={0} className="" onClick={AddNewKeyHandler}>
+				Добавить ключ доступа
+			</div>
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success">
+          {alertMsg}
+        </Alert>
+      </Snackbar>
 		</div>
 	)
 }
 
-export default UserSettingsPanel
+export default AccessKeysStgPanel

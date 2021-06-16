@@ -11,6 +11,7 @@ const sendData = require('./modules/sendData')
 const dataToMongo = require('./modules/dataToMongo')
 const weatherService = require('./modules/weatherService')
 const serialPort = require('./modules/serialPort')
+const co = require('./modules/syncData')
 
 const Shostname = '127.0.0.1'
 const serverPort = config.get('port') || 8000
@@ -40,9 +41,9 @@ const start = async () => {
 		app.listen(serverPort, () =>
 			console.log(`App started on port ${serverPort}`)
 		)
-
-		 // weatherService.getWeatherTwelveHours()
-		 // weatherService.getWeatherFiveDays()
+		co.updateCOData()
+		// weatherService.getWeatherTwelveHours()
+		// weatherService.getWeatherFiveDays()
 	} catch (e) {
 		console.log('Server error', e.message)
 		process.exit(1)
@@ -115,7 +116,7 @@ const createGraphData = () => {
 start()
 
 // sendData(
-// 	'isAutoLight1:0; isAutoLight2:0; isAutoWatering:0;isAutoPumping:0;allLight :0 ;firstFloorLight1:1;firstFloorLight2:1;firstFloorLight3:1;firstFloorLight4:1;secondFloorLight1:1;secondFloorLight2:1;secondFloorLight3:1;secondFloorLight4:1;garageLight1:1;garageLight2:1;outsideLight1:1;outsideLight2:1;firstFloorLight1:0;firstFloorLight2:0;firstFloorLight3:0;firstFloorLight4:0;secondFloorLight1:0;secondFloorLight2 :0;seco ndFloorLi gh t3: 0;sec on dFlo orLi g ht4  :)))))))))))))0;g a rag e Lig h t 1:0 ;garageLight2:0;outsideLight1:0;outsideLight2:0;firstFloorLight1:1;firstFloorLight2:1;firstFloorLight3:1;firstFloorLight4:1;secondFloorLight1:1;secondFloorLight2:1;secondFloorLight3:1;secondFloorLight4:1;garageLight1:1;garageLight2:1;outsideLight1:1;outsideLight2:1;firstFloorLight1:0;firstFloorLight2:0;firstFloorLight3:0;firstFloorLight4:0;secondFloorLight1:0;secondFloorLight2:0;secondFloorLight3:0;secondFloorLight4:0;garageLight1:0;garageLight2:0;outsideLight1:0;outsideLight2:0;'
+// 	'isAutoLight1:0; isAutoLight2:0; isAutoWatering:0; isAutoPumping:0; allLight:0;'
 // )
 
 // createGraphData()

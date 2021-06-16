@@ -4,7 +4,7 @@ const userSchema = new Schema(
 		nickname: {
 			type: String,
 			required: true,
-			unique: true
+			unique: false
 		},
 		email: {
 			type: String,
@@ -12,9 +12,9 @@ const userSchema = new Schema(
 			unique: true
 		},
 		password: {type: String, required: true},
-		settings: []
+		theme: {type: String, required: true}
 	},
 	{versionKey: false}
 )
 
-module.exports = model('User', userSchema)
+module.exports = model('user', userSchema)

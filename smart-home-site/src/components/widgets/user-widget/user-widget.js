@@ -2,15 +2,18 @@ import * as React from "react"
 import "./user-widget.css"
 
 export default function UserWidget() {
+  const [user, setUser] = React.useState({email: "", nickname: ""})
+
+  React.useEffect(()=>{
+    const userData = JSON.parse(localStorage.getItem("userData"))
+    setUser({email: userData.email, nickname: userData.nickname })
+  }, [])
+
 	return (
 		<div className="user-widget">
-			<div className="user-img-wrapper">
-				<img src="https://via.placeholder.com/150" alt="User inform" className="user-img" />
-			</div>
 			<div className="user-info-text">
-				<span>MitsuruYano</span>
-				<span>ghostsword2409@gmail.com</span>
-				<span>My sweet home</span>
+				<span>{user.nickname}</span>
+				<span>{user.email}</span>
 			</div>
 		</div>
 	)

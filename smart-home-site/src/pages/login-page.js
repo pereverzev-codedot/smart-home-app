@@ -3,7 +3,7 @@ import LoginPanel from "../components/login-panel"
 
 const LoginPage = () => {
   React.useEffect(()=>{
-    document.title = "Login page"
+    document.title = "SmartHomeApp - Авторизация"
   })
 	return <LoginPanel />
 }

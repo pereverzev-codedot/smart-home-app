@@ -1,10 +1,11 @@
-.settings-main{
-  display: flex;
-  flex-direction: column;
-  background-color: var(--panels-color);
-  padding: 20px;
-  border-radius: 25px;
-  width: 85vw;
-  height: 90vh;
-  margin-top: 35px;
+.settings-main {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--panels-color);
+	padding: 20px;
+	border-radius: 25px;
+	width: 85vw;
+	height: 90vh;
+	margin-top: 35px;
+	overflow-y: scroll;
 }

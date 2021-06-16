@@ -1,6 +1,7 @@
 const changableOptions = require('../models/changableOptions')
 const sensorsValues = require('../models/sensorsValues')
 const alerts = require('../models/alerts')
+const co = require('../modules/syncData')
 const mongoose = require('mongoose')
 
 const dataToMongo = (line) => {
@@ -26,13 +27,7 @@ const dataToMongo = (line) => {
 			let alert = new alerts(data)
 			alert.save(function (err) {})
 		} else if (data.datatype === 'change') {
-			changableOptions.findOne({datatype: 'change'}, function (err, doc) {
-				changableOptions.updateOne(
-					{datatype: 'change'},
-					data,
-					function (err, result) {}
-				)
-			})
+			co.coToMongo(data)
 		}
 	}
 }

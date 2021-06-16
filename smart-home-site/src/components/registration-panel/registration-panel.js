@@ -24,21 +24,26 @@ const RegistrationPanel = () => {
 		email: "",
 		password: "",
 		repeatedPassword: "",
+    accessKey: ""
 	})
-	useEffect(() => {}, [error])
 	const changeHandler = (event) => {
 		setForm({ ...form, [event.target.name]: event.target.value })
 	}
 	const registerHandler = async () => {
-		if (form.repeatedPassword === form.password) {
-			try {
+	  if(form.password.length < 6){
+      setAlertMsg("Пароль должен быть больше 6 символов в длинну")
+      setSeverity("error")
+      setOpen(true)
+    }
+	  else if (form.repeatedPassword === form.password) {
+			  try {
 				const data = await request("api/auth/register", "POST", { ...form })
 				setAlertMsg("Вы успешно зарегистрировали аккаунт")
 				setSeverity("success")
 				setOpen(true)
 
 				console.log("data: ", data)
-			} catch (e) {
+			  } catch (e) {
 				console.log("err")
 				setAlertMsg(e.message)
 				setSeverity("error")
@@ -84,6 +89,13 @@ const RegistrationPanel = () => {
 					onChange={changeHandler}
 					label="Repeat password"
 				/>
+        <TextField
+          className="data-input"
+          type="text"
+          name="accessKey"
+          onChange={changeHandler}
+          label="Enter special key"
+        />
 			</div>
 			<div className="button-panel">
 				<div className="row-js-btw">

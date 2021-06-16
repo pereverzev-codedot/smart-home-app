@@ -1,7 +1,7 @@
 .data-widget {
 	display: flex;
 	width: 100%;
-	justify-content: space-between;
+	flex-direction: column;
 	padding: 10px 20px;
 	background-color: var(--fourth-color);
 	border-radius: 20px;
@@ -16,9 +16,10 @@
 }
 
 .time-text {
-  font-size: 52px;
-  line-height: 73px;
-  width: 195px;
+	font-size: 52px;
+	line-height: 73px;
+	width: 195px;
+	text-align: center;
 }
 
 .date-block {
@@ -33,13 +34,13 @@
 }
 
 @media (max-width: 568px) {
-  .date-text {
-    font-size: 16px;
-    line-height: 20px;
-  }
-  .time-text {
-    font-size: 40px;
-    line-height: 50px;
-    width: 140px;
-  }
+	.date-text {
+		font-size: 16px;
+		line-height: 20px;
+	}
+	.time-text {
+		font-size: 40px;
+		line-height: 50px;
+		width: 140px;
+	}
 }

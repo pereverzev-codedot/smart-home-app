@@ -3,7 +3,7 @@ import SettingsMain from "../components/settings-main"
 
 const SettingsPage = () => {
   React.useEffect(()=>{
-    document.title = "Settings page"
+    document.title = "SmartHomeApp - Настройки"
   })
 	return <SettingsMain />
 }

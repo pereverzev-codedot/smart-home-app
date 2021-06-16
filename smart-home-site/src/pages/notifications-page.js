@@ -3,7 +3,7 @@ import NoificationWidget from "../components/widgets/notifications-widget"
 
 export default function NotificationsPage() {
   React.useEffect(()=>{
-    document.title = "Notification page"
+    document.title = "SmartHomeApp - Уведомления"
   })
-	return <NoificationWidget />
+	return <NoificationWidget pagination={true} />
 }

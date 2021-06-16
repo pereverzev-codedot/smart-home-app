@@ -1,0 +1,16 @@
+.home-block-wrapper{
+  background-color: var(--fourth-color);
+  width: 72vw;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 15px;
+}
+
+.home-block-special{
+
+}
+
+.home-block-wrapper .MuiSelect-selectMenu{
+  color: var(--text-color-second) !important;
+  opacity: 0.9;
+}
